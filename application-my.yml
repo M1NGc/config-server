@@ -1,0 +1,30 @@
+﻿server:
+  port: 8091
+  tomcat:
+    uri-encoding: UTF-8
+    #是否开放tomcat日志
+    #server.tomcat.basedir=/root/tld/rbac_tld/
+    basedir: D:/tld/
+    accesslog:
+      enabled: true
+      buffered: true
+      directory: /tomcat/
+      prefix: access_log
+      suffix: .log
+
+spring:
+  http:
+    encoding:
+      force: true
+      charset: UTF-8
+      enabled: true
+
+
+  #*************   *************
+  datasource:
+    db1:
+      type: com.alibaba.druid.pool.DruidDataSource
+      driverClassName: ru.yandex.clickhouse.ClickHouseDriver
+      url: jdbc:clickhouse://115.159.31.248:8123/TLD2?serverTimezone=GMT%2B8
+      username: default
+      password: bmsoft2019
